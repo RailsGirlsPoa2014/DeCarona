@@ -1,0 +1,43 @@
+<%= form_for(@ride) do |f| %>
+  <% if @ride.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ride.errors.count, "error") %> prohibited this ride from being saved:</h2>
+
+      <ul>
+      <% @ride.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label "Pessoa" %><br>
+    <%= f.collection_select :person_id, Person.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Origem" %><br>
+    <%= f.text_field :origin %>
+  </div>
+  <div class="field">
+    <%= f.label "Destino" %><br>
+    <%= f.text_field :destination %>
+  </div>
+  <div class="field">
+    <%= f.label "Horário" %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label "Passageiros" %><br>
+    <%= f.number_field :passengers %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :asking, true %>
+    <%= f.label "Pedir" %><br>
+    <%= f.radio_button :asking, false %>
+    <%= f.label "Oferecer" %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+<% end %>

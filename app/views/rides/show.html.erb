@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pessoa:</strong>
+  <%= @ride.person %>
+  | <%= @ride.person.contact %>
+</p>
+
+
+<p>
+  <strong>Origem:</strong>
+  <%= @ride.origin %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @ride.destination %>
+</p>
+
+<p>
+  <strong>Horário:</strong>
+  <%= @ride.time %>
+</p>
+
+<p>
+  <strong>Passageiros:</strong>
+  <%= @ride.passengers %>
+</p>
+
+<p>
+  <strong>Ação:</strong>
+  <%= @ride.print_ask %>
+</p>
+
+<%= link_to 'Editar', edit_ride_path(@ride) %> |
+<%= link_to 'Voltar', rides_path %>

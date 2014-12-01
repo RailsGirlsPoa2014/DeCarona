@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeCarona</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="menu">
+		DeCarona:
+		<%= link_to "Cadastro", people_path %>
+		<%= link_to "Caronas", rides_path %>
+	</div>
+	<hr>
+
+<%= yield %>
+
+</body>
+</html>

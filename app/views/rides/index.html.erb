@@ -1,0 +1,35 @@
+<h1>Caronas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pessoa</th>
+      <th>Origem</th>
+      <th>Destino</th>
+      <th>Horário</th>
+      <th>Passageiros</th>
+      <th>Ação</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rides.each do |ride| %>
+      <tr>
+        <td><%= ride.person %></td>
+        <td><%= ride.origin %></td>
+        <td><%= ride.destination %></td>
+        <td><%= ride.time %></td>
+        <td><%= ride.passengers %></td>
+        <td><%= ride.print_ask %></td>
+        <td><%= link_to 'Ver', ride %></td>
+        <td><%= link_to 'Editar', edit_ride_path(ride) %></td>
+        <td><%= link_to 'Apagar', ride, method: :delete, data: { confirm: 'Confirma?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Adicionar carona', new_ride_path %>
